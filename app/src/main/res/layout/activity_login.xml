@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.fc.vedio.view.CustomVideoView
+        android:id="@+id/video_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="@dimen/len_20"
+        android:layout_marginRight="@dimen/len_20">
+
+        <LinearLayout
+            android:id="@+id/layout_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="@dimen/len_28"
+                    android:layout_height="@dimen/len_28"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/len_10"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_user" />
+
+                <com.fc.vedio.view.EditWithDeal
+                    android:id="@+id/user_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_bg"
+                    android:drawableLeft="@drawable/ic_user"
+                    android:hint="@string/name_hint"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:paddingBottom="@dimen/len_10"
+                    android:paddingLeft="@dimen/len_48"
+                    android:paddingRight="@dimen/len_10"
+                    android:paddingTop="@dimen/len_10"
+                    android:textColor="@color/white_alpha_224"
+                    android:textColorHint="@color/white_alpha_128"
+                    android:textSize="@dimen/font_22" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/len_20">
+
+                <ImageView
+                    android:layout_width="@dimen/len_28"
+                    android:layout_height="@dimen/len_28"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/len_10"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_password" />
+
+                    <com.fc.vedio.view.EditWithDeal
+                        android:id="@+id/user_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edit_bg"
+                        android:drawableLeft="@drawable/ic_password"
+                        android:drawableStart="@drawable/ic_password"
+                        android:hint="@string/password_hint"
+                        android:imeOptions="actionDone"
+                        android:inputType="textPassword"
+                        android:paddingBottom="@dimen/len_10"
+                        android:paddingRight="@dimen/len_10"
+                        android:paddingLeft="@dimen/len_48"
+                        android:paddingTop="@dimen/len_10"
+                        android:textColor="@color/white_alpha_224"
+                        android:textColorHint="@color/white_alpha_128"
+                        android:textSize="@dimen/font_22" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/remember_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/remember_password"
+                    android:textColor="@color/white_alpha_192"
+                    android:textSize="@dimen/font_16" />
+
+                <CheckBox
+                    android:id="@+id/auto_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/auto_login"
+                    android:textColor="@color/white_alpha_192"
+                    android:textSize="@dimen/font_16" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/len_20"
+                android:background="@drawable/btn_bg"
+                android:padding="@dimen/len_10"
+                android:text="@string/login"
+                android:textColor="@color/white_alpha_224"
+                android:textSize="@dimen/font_22" />
+
+            <TextView
+                android:id="@+id/extra_function"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/len_4"
+                android:gravity="center"
+                android:padding="@dimen/len_10"
+                android:text="@string/lose_password"
+                android:textColor="@color/white_alpha_224"
+                android:textColorLink="@drawable/tv_link"
+                android:textSize="@dimen/font_18" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_registered"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alpha="0"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="@dimen/len_28"
+                    android:layout_height="@dimen/len_28"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/len_10"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_user" />
+
+                <com.fc.vedio.view.EditWithDeal
+                    android:id="@+id/user_name_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_bg"
+                    android:hint="@string/name_hint"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:paddingBottom="@dimen/len_10"
+                    android:paddingLeft="@dimen/len_48"
+                    android:paddingRight="@dimen/len_10"
+                    android:paddingTop="@dimen/len_10"
+                    android:textColor="@color/white_alpha_224"
+                    android:textColorHint="@color/white_alpha_128"
+                    android:textSize="@dimen/font_22" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/len_16">
+
+                <ImageView
+                    android:layout_width="@dimen/len_28"
+                    android:layout_height="@dimen/len_28"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/len_10"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_gender" />
+
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_bg"
+                    android:paddingBottom="@dimen/len_10"
+                    android:paddingLeft="@dimen/len_48"
+                    android:paddingRight="@dimen/len_10"
+                    android:paddingTop="@dimen/len_10"
+                    android:spinnerMode="dialog" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/len_16">
+
+                <ImageView
+                    android:layout_width="@dimen/len_28"
+                    android:layout_height="@dimen/len_28"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/len_10"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_password" />
+
+                <com.fc.vedio.view.EditWithDeal
+                    android:id="@+id/user_password_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_bg"
+                    android:hint="@string/password_hint"
+                    android:imeOptions="actionNext"
+                    android:inputType="textPassword"
+                    android:paddingBottom="@dimen/len_10"
+                    android:paddingLeft="@dimen/len_48"
+                    android:paddingRight="@dimen/len_10"
+                    android:paddingTop="@dimen/len_10"
+                    android:textColor="@color/white_alpha_224"
+                    android:textColorHint="@color/white_alpha_128"
+                    android:textSize="@dimen/font_22" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/len_20">
+
+                <ImageView
+                    android:layout_width="@dimen/len_28"
+                    android:layout_height="@dimen/len_28"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/len_10"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_password" />
+
+                <com.fc.vedio.view.EditWithDeal
+                    android:id="@+id/password_again_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_bg"
+                    android:hint="@string/password_again_hint"
+                    android:imeOptions="actionNext"
+                    android:inputType="textPassword"
+                    android:paddingBottom="@dimen/len_10"
+                    android:paddingLeft="@dimen/len_48"
+                    android:paddingRight="@dimen/len_10"
+                    android:paddingTop="@dimen/len_10"
+                    android:textColor="@color/white_alpha_224"
+                    android:textColorHint="@color/white_alpha_128"
+                    android:textSize="@dimen/font_22" />
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/password_hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/red_400"
+                android:padding="@dimen/len_2"
+                android:textSize="@dimen/font_12"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="@dimen/len_28"
+                    android:layout_height="@dimen/len_28"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/len_10"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_phone" />
+
+                <com.fc.vedio.view.EditWithDeal
+                    android:id="@+id/user_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_bg"
+                    android:hint="@string/phone_hint"
+                    android:imeOptions="actionNext"
+                    android:inputType="phone"
+                    android:paddingBottom="@dimen/len_10"
+                    android:paddingLeft="@dimen/len_48"
+                    android:paddingRight="@dimen/len_10"
+                    android:paddingTop="@dimen/len_10"
+                    android:textColor="@color/white_alpha_224"
+                    android:textColorHint="@color/white_alpha_128"
+                    android:textSize="@dimen/font_22" />
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/phone_hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white_alpha_240"
+                android:padding="@dimen/len_4"
+                android:textSize="@dimen/font_16"/>
+            <Button
+                android:id="@+id/btn_registered"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/len_6"
+                android:background="@drawable/btn_bg"
+                android:padding="@dimen/len_10"
+                android:text="@string/registered"
+                android:textColor="@color/white_alpha_224"
+                android:textSize="@dimen/font_20" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/len_2">
+
+                <ImageView
+                    android:layout_width="@dimen/len_14"
+                    android:layout_height="@dimen/len_14"
+                    android:layout_alignBaseline="@+id/return_login"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/len_10"
+                    android:layout_toLeftOf="@+id/return_login"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_return_double_arrow" />
+
+                <TextView
+                    android:id="@+id/return_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/return_login"
+                    android:textColor="@color/white_alpha_224"
+                    android:textSize="@dimen/font_18" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/big_portrait"
+        android:layout_width="@dimen/len_96"
+        android:layout_height="@dimen/len_96"
+        android:layout_above="@id/relativeLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/len_20"
+        android:src="@drawable/default_portrait"
+        app:civ_border_color="@color/white_alpha_240"
+        app:civ_border_overlay="false"
+        app:civ_border_width="@dimen/len_2" />
+
+    <LinearLayout
+        android:id="@+id/layout_other"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/len_20"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/qq"
+            android:layout_width="@dimen/len_44"
+            android:layout_height="@dimen/len_44"
+            android:layout_gravity="center"
+            android:background="@drawable/qq_selector"
+            android:clickable="true"
+            android:contentDescription="@string/app_name" />
+
+        <ImageView
+            android:id="@+id/wei_xin"
+            android:layout_width="@dimen/len_44"
+            android:layout_height="@dimen/len_44"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/len_20"
+            android:background="@drawable/weixin_selector"
+            android:clickable="true"
+            android:contentDescription="@string/app_name" />
+
+        <ImageView
+            android:id="@+id/wei_bo"
+            android:layout_width="@dimen/len_44"
+            android:layout_height="@dimen/len_44"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/len_20"
+            android:background="@drawable/weibo_selector"
+            android:clickable="true"
+            android:contentDescription="@string/app_name" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_above="@+id/layout_other"
+        android:layout_marginLeft="@dimen/len_20"
+        android:layout_marginRight="@dimen/len_20"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@color/white_alpha_224" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/other_login"
+            android:textColor="@color/white_alpha_224"
+            android:textSize="@dimen/font_18" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@color/white_alpha_224" />
+    </LinearLayout>
+</RelativeLayout>
