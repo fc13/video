@@ -1,6 +1,7 @@
 package com.fc.vedio.cache;
 
 import android.content.Context;
+import android.os.Parcelable;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -29,6 +30,29 @@ public class CacheManager {
             fos = context.openFileOutput(file, Context.MODE_PRIVATE);
             oos = new ObjectOutputStream(fos);
             oos.writeObject(ser);
+            oos.flush();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            try {
+                oos.close();
+                fos.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    //保存对象
+    public static boolean saveObject(Context context, Parcelable parcelable, String file) {
+        FileOutputStream fos = null;
+        ObjectOutputStream oos = null;
+        try {
+            fos = context.openFileOutput(file, Context.MODE_PRIVATE);
+            oos = new ObjectOutputStream(fos);
+            oos.writeObject(parcelable);
             oos.flush();
             return true;
         } catch (Exception e) {

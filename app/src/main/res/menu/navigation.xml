@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:id="@+id/group_fun">
+        <item
+            android:id="@+id/item_collection"
+            android:icon="@drawable/ic_collection"
+            android:title="@string/action_collection"
+            app:showAsAction="ifRoom" />
+        <item
+            android:id="@+id/item_mall"
+            android:icon="@drawable/ic_mall"
+            android:title="@string/action_mall"
+            app:showAsAction="ifRoom" />
+        <item
+            android:id="@+id/item_member"
+            android:icon="@drawable/ic_member"
+            android:title="@string/action_member"
+            app:showAsAction="ifRoom" />
+    </group>
+
+    <group android:id="@+id/group_set">
+        <item
+            android:id="@+id/item_friend"
+            android:icon="@drawable/ic_friend"
+            android:title="@string/action_friend"
+            app:showAsAction="ifRoom" />
+
+        <item
+            android:id="@+id/item_nearby"
+            android:icon="@drawable/ic_nearby"
+            android:title="@string/action_nearby"
+            app:showAsAction="ifRoom" />
+
+        <item
+            android:id="@+id/item_setting"
+            android:icon="@drawable/ic_setting"
+            android:title="@string/action_setting"
+            app:showAsAction="ifRoom" />
+
+        <item
+            android:id="@+id/item_exit"
+            android:icon="@drawable/ic_exit"
+            android:title="@string/action_exit"
+            app:showAsAction="ifRoom" />
+    </group>
+</menu>

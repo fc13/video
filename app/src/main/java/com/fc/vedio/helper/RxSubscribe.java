@@ -4,6 +4,8 @@ package com.fc.vedio.helper;
 import android.content.Context;
 import android.content.DialogInterface;
 
+import java.net.SocketTimeoutException;
+
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import io.reactivex.Observer;
 import io.reactivex.annotations.NonNull;
@@ -95,7 +97,9 @@ public abstract class RxSubscribe<T> implements Observer<T> {
             _onError("网络不可用");
         } else */if (e instanceof ServerException) {
             _onError(e.getMessage());
-        } else {
+        } else if (e instanceof SocketTimeoutException){
+            _onError("连接服务器失败");
+        }else {
             _onError("请求失败，请稍后再试...");
         }
         if (showDialog())

@@ -5,6 +5,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Build;
 import android.telephony.TelephonyManager;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
@@ -136,6 +137,7 @@ public class Util {
 
     /**
      * 获取屏幕的宽和高
+     *
      * @param context 上下文
      * @return 屏幕宽高的数组
      */
@@ -153,12 +155,13 @@ public class Util {
 
     /**
      * 判断number是什么运营商的手机号码
+     *
      * @param number 手机号
      * @return 运营商
      */
-    public static String isMobileNumber(String number){
+    public static String isMobileNumber(String number) {
         String operators = "无效的手机号";
-        if (number.trim().length()!=11){
+        if (number.trim().length() != 11) {
             return "请输入11位的手机号";
         }
         /**
@@ -187,14 +190,52 @@ public class Util {
         boolean matches_cm = Pattern.matches(cm, number);
         boolean matches_cu = Pattern.matches(cu, number);
         boolean matches_ct = Pattern.matches(ct, number);
-        if (matches_cm){
+        if (matches_cm) {
             operators = "中国移动号码";
-        }else if (matches_cu){
+        } else if (matches_cu) {
             operators = "中国联通号码";
-        }else if (matches_ct){
+        } else if (matches_ct) {
             operators = "中国电信号码";
         }
         return operators;
     }
 
+    /**
+     * 获取手机型号
+     *
+     * @return 手机型号
+     */
+    public static String getPhoneModel() {
+        return Build.MODEL;
+    }
+
+    /**
+     * 获取手机品牌
+     */
+    public static String getPhoneProduct() {
+        return Build.PRODUCT;
+    }
+
+    /**
+     * 获取SDK版本号
+     * @return SDK版本号
+     */
+    public static int getSDKVersion(){
+        return Build.VERSION.SDK_INT;
+    }
+
+    /**
+     * 获取系统版本号
+     * @return 系统版本号
+     */
+    public static String getSystemVersion(){
+        return Build.VERSION.RELEASE;
+    }
+
+    /**
+     * 获取设备唯一ID
+     */
+    public static String getDeviceID(){
+        return Build.SERIAL;
+    }
 }

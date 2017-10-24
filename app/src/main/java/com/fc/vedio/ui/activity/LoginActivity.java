@@ -487,6 +487,7 @@ public class LoginActivity extends BaseActivity {
                     protected void _onNext(String s) {
                         Toast.makeText(LoginActivity.this, s, Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+                        intent.putExtra("userName",userName);
                         startActivity(intent);
                         finish();
                     }

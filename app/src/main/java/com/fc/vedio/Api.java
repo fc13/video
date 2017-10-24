@@ -20,7 +20,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class Api {
     private static ApiService SERVICE;
     private static ApiService DOWNLOAD_SERVICE;
-    private static String BASE_URL = "http://192.168.191.1:8080/api/";
+//    private static String BASE_URL = "http://192.168.191.1:8080/api/";
+    private static String BASE_URL = "http://192.168.199.169:8080/api/";
 
     public static ApiService getDefault() {
         if (SERVICE == null) {
